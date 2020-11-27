@@ -10,48 +10,29 @@
 
     <title>@yield('title')</title>
   </head>
-  <body>
+  
   <div class="p-3 mb-2 bg-warning text-dark">
       <h1 align="center">ToeTje</h1>
-        <h5 align="center">Jamu Seger</h5>    
-      <table align="center">
-          <tr>
-              <td> 
+        <h5 align="center">Jamu Seger</h5> 
+  <body>
+  @foreach($jamu as $jamu)
+   <table class="table table-striped">
   <div class="card" style="width: 18rem;">
-  
-  <img class="card-img-top" src="/resources/images/1.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Lemon Sereh</h5>
-    <p class="card-text"><b>Komposisi:</b> Air, Sereh, Jeruk Lemon, Gula Batu, Selasih<br>
-                        <br><b>Khasiat</b>: Menyehatkan saluran cerna, menurunkan berat badan, menyehatkan kulit, mencegah kerusakan gigi, menstabilkan tekanan darah, mencegah rematik.</p>
-    <a href="#" class="btn btn-primary">Pesan</a>
+  <tr>
+      <td><img class="card-img-top" src=" {{ asset('image/' . $jamu->gambar) }}" width="200" height="200" alt="Card image cap"> </td>
+  <td> <div class="card-body">
+    <h5 class="card-title">{{ $jamu['nama'] }} </h5> </td>
+    <td> <p class="card-text"> {{ $jamu['komposisi'] }} </p> </td>
+    <td> <p class="card-text"> {{ $jamu['khasiat'] }} </p> </td>
+    <td><a href="#" class="btn btn-primary">Pesan</a> </td>
   </div>
-</div> </td>
-
-<td> <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Kunyit Asem</h5>
-    <p class="card-text"><b>Komposisi</b>: Air, Empu Kunyit, Asem Jawa, Gula Aren, Sereh, Sejumput garam<br><br><b>Khasiat</b>: Meredakan nyeri haid, sebagai antioksidan, melancarkan pencernaan, menangkal radikal bebas, menurunkan berat badan, mengendalikan gula darah.</p>
-    <a href="#" class="btn btn-primary">Pesan</a>
-  </div>
-</div> </td>
-<td> <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Beras Kencur</h5>
-    <p class="card-text"><b>Komposisi</b>: Air, Tepung Beras, Gula Aren, Kencur, Jahe Emprit, Cengkeh, Kapulaga, Kayu Manis, Kedawung, Jeruk Nipis, Garam Sejumput.<br><br><b>Khasiat</b>: Meningkatkan nafsu makan, mencegah dan mengobati jerawat pada wajah, menangkal radikal bebas dan polusi udara, dan mengobati rasa sakit serta pegal-pegal, meredakan diare, meredakan batuk berdahak, mempertahankan gula darah.</p>
-    <a href="#" class="btn btn-primary">Pesan</a>
-  </div>
-</td>
-          </tr>
-
-      </table>
+</div>
   
 
 </span>
 </div>
-
+</table>
+@endforeach
 
 
     <!-- Optional JavaScript -->

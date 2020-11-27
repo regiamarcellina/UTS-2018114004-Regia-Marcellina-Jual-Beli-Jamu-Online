@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jamu;
 use Illuminate\Http\Request;
 
 class PenjualanController extends Controller
@@ -13,7 +14,9 @@ class PenjualanController extends Controller
      */
     public function index()
     {
-        return view("penjualan.index");
+        $jamu = Jamu::orderBy('id', 'desc')->paginate(3);
+        return view('layout.home', compact('jamu'));
+        //return view("penjualan.index");
     }
 
     /**
